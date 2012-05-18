@@ -1,0 +1,37 @@
+[merge]
+	tool = DiffMerge
+[mergetool "diffmerge"]
+	cmd = diffmerge2 --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustexitcode = true
+[mergetool]
+	prompt = false
+	keepBackup = false
+[diff]
+	tool = diffmerge
+	guitool = kdiff3
+[difftool "diffmerge"]
+	cmd = diffmerge2 --nosplash --title1=\"Theirs\" --title2=\"Mine\" \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	keepBackup = false
+[user]
+	name = John Kane
+	email = john.kane@spartan-solutions.com
+[alias]
+  s = status
+  co = checkout
+  ci = commit -m
+  br = branch
+  a = add
+  l = log
+  poom = push origin master
+  boom = push origin master
+  piom = pull origin master
+[core]
+	editor = vi
+[color]
+	ui = auto
+[difftool "kdiff3"]
+	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
+[mergetool "DiffMerge"]
+	cmd = diffmerge2 --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

@@ -1,0 +1,102 @@
+" Needed on some linux distros.
+" see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+filetype off 
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+"enable syntax highlighting
+syntax on
+
+" Turns off swap files.
+set noswapfile
+
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
+
+"allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+"store lots of :cmdline history
+set history=1000
+
+set showcmd     "show incomplete cmds down the bottom
+set showmode    "show current mode down the bottom
+
+set incsearch   "find the next match as we type the search
+set hlsearch    "hilight searches by default
+set ignorecase  "Case insensitive search
+
+set number      "add line numbers
+set showbreak=...
+set wrap linebreak nolist
+
+" Turn off the bell
+set visualbell t_vb= 
+
+" Map the leader key
+let mapleader = ","
+
+" Set the tab indent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+"set colorscheme
+colorscheme rdark
+
+" Set sql server to be the default sql syntax.
+let g:sql_type_default = "sqlserver"
+
+
+" Set the defaults for database access
+let g:dbext_default_profile_dbMobility = 'type=SQLSRV:integratedlogin=1:dbname=dbMobility'
+
+autocmd BufRead,BufNewFile *.ps1 set syntax=ps1
+autocmd BufRead,BufNewFile *.psm1 set syntax=ps1
+
+" Turn off creation of swap and backup files.
+set nobackup
+set nowritebackup
+
+" General UI Settings -----------------------------
+
+" Hide toolbar and menus.
+set guioptions-=T
+set guioptions-=m
+
+" Scrollbar is always off.
+set guioptions-=rL
+
+" Console style tab labels
+set guioptions-=e
+
+" Don't flick cursor.
+set guicursor=a:blinkon0
+
+" Setup Mac UI Settings ----------------------------
+if has("gui_mac") || has("gui_macvim")
+  set guifont=Inconsolata-dz_for_Powerline:h10:b
+  "set guifont=Monospace:b:h10
+  "set guifont=Menlo:h14
+endif
+
+" Setup Windows GUI settings -----------------------
+if has("gui_win32") || has("gui_win32s")
+  source $VIMRUNTIME/mswin.vim " Use standard copy and paste
+  set guifont=Inconsolata-dz_for_Powerline:h10
+  set enc=utf-8
+  au GUIEnter * simalt ~x " On opening vim expand to full screen.
+  map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+endif
+
+" Plugin Setup -------------------------------------
+
+" NerdTree -----------------------------------------
+
+" Map opening nerdtree side tab
+nmap <F2> :NERDTreeToggle<CR>
+
+" Conque -------------------------------------------
+let g:ConqueTerm_PyExe = 'C:\Python31\python.exe'

@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='D:/Users/john kane/scripts/clojure/github-wiki-search'
+let g:netrw_dirhist_2='C:/repos/Common/Posh'
+let g:netrw_dirhist_3='D:/Users/john kane/repos/dejour'
+let g:netrw_dirhist_4='C:/repos/Common/Source/Portal/Scripts'
+let g:netrw_dirhist_5='C:/repos/Common/Posh'
+let g:netrw_dirhist_6='D:/Users/john kane/scripts/clojure/github-wiki-search'
+let g:netrw_dirhist_7='C:/repos/Common/Posh'
+let g:netrw_dirhist_8='C:/repos/Common/Tools/node'
