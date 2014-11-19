@@ -18,7 +18,7 @@
 [merge]
 	tool = DiffMerge
 [mergetool "diffmerge"]
-	cmd = diffmerge2 --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = sgdm --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustexitcode = true
 [mergetool]
 	prompt = false
@@ -34,4 +34,4 @@
 [difftool "kdiff3"]
 	path = c:/Program Files/KDiff3/kdiff3.exe
 [mergetool "DiffMerge"]
-	cmd = diffmerge2 --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = sgdm --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
