@@ -28,10 +28,31 @@ function shorten-path([string] $path) {
 
 # Aliases
 Set-Alias g git
+Set-Alias light LightTable
+
+function Reload-Profile {
+  @(
+      $Profile.AllUsersAllHosts,
+      $Profile.AllUsersCurrentHost,
+      $Profile.CurrentUserAllHosts,
+      $Profile.CurrentUserCurrentHost
+   ) | % {
+    if($_ -and (Test-Path $_)){
+      Write-Verbose "Running $_"
+        . $_
+    }
+  }    
+}
 
 function ep() {
   vim $Profile
-  source $Profile
+  . Reload-Profile
 }
 
-
+function open([string] $path) {
+  if($path) {
+    explorer $path
+  } else {
+    explorer .
+  }
+}
