@@ -26,9 +26,13 @@ function shorten-path([string] $path) {
    return ($loc -replace '\\(\.?)([^\\])[^\\]*(?=\\)','\$1$2') 
 }
 
+
+# Modules
+Import-Module -Force ~\.config\powershell\modules\jump.psm1
 # Aliases
 Set-Alias g git
 Set-Alias light LightTable
+Set-Alias j Set-LocationByAlias
 
 function Reload-Profile {
   @(
@@ -47,6 +51,10 @@ function Reload-Profile {
 function ep() {
   vim $Profile
   . Reload-Profile
+}
+
+function ej() {
+  vim ~\.jumpfile
 }
 
 function open([string] $path) {
