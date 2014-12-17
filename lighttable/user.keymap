@@ -1,0 +1,11 @@
+[
+ [:editor "alt-w" :editor.watch.watch-selection]
+ [:editor "alt-shift-w" :editor.watch.unwatch]
+
+ [:app "ctrl-f4" :tabs.close]
+ [:app "ctrl-e" :workspace.show]
+ [:app "f12" :toggle-console]
+
+ [:editor "ctrl-k ctrl-c" :toggle-comment-selection]
+ [:editor "ctrl-k ctrl-u" :toggle-comment-selection]
+]
