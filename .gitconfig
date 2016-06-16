@@ -16,7 +16,7 @@
 	keepBackup = false
 [user]
 	name = John Kane
-	email = john.kane@spartan-solutions.com
+	email = john@kanej.me 
 [alias]
   s = status
   co = checkout
@@ -28,7 +28,7 @@
   boom = push origin master
   piom = pull origin master
 [core]
-	editor = vi
+	editor = vim
 [color]
 	ui = auto
 [difftool "kdiff3"]
