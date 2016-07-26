@@ -19,6 +19,8 @@
                       emmet-mode
                       go-mode
                       js2-mode
+                      terraform-mode
+                      flycheck
                       ))
 
 (dolist (p my-packages)
@@ -30,6 +32,9 @@
 
 ;; Setup autocompletion
 (global-company-mode)
+
+;; Setup Flycheck
+(global-flycheck-mode)
 
 ;; Setup rainbow parens in clojure mode
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
@@ -48,6 +53,9 @@
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 (transient-mark-mode 1)
+
+;; Setup Terraform (Hashicorp)
+(custom-set-variables '(terraform-indent-level 4))
 
 ;; Set theme
 (load-theme 'zenburn t)
