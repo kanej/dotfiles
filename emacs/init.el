@@ -6,6 +6,8 @@
 
 (defvar my-packages '(better-defaults
                       projectile
+                      helm
+                      helm-projectile
                       clojure-mode
                       yaml-mode
                       cider
@@ -21,20 +23,36 @@
                       js2-mode
                       terraform-mode
                       flycheck
+                      yasnippet
+                      mocha
+                      web-mode
                       ))
 
 (dolist (p my-packages)
     (unless (package-installed-p p)
         (package-install p)))
 
+;; Turn off auto backup of files
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;; Setup Helm
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "C-x b") 'helm-buffers-list)
+
+
 ;; Setup Projectile
 (projectile-global-mode)
+;;(helm-projectile-on)
 
 ;; Setup autocompletion
 (global-company-mode)
 
 ;; Setup Flycheck
 (global-flycheck-mode)
+
+;; Setup Yasnippet
+(yas-global-mode)
 
 ;; Setup rainbow parens in clojure mode
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
@@ -47,6 +65,10 @@
 (setq js-indent-level 2)
 (setq-default js2-basic-offset 2)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Setup Mocha test runner
+(custom-set-variables '(mocha-command "node_modules/.bin/mocha"))
+(custom-set-variables '(mocha-options "--reporter dot"))
 
 ;; Setup Emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -71,6 +93,10 @@
 (global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "C-C r") 'recompile)
 
+(global-set-key (kbd "C-C t t") 'mocha-test-project)
+(global-set-key (kbd "C-C t r") 'mocha-test-at-point)
+(global-set-key (kbd "C-C t f") 'mocha-test-file)
+
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
@@ -79,7 +105,7 @@
   (newline)
   (yank))
 
-(global-set-key (kbd "C-d") 'duplicate-line)
+(global-set-key (kbd "C-X d") 'duplicate-line)
 
 (global-auto-revert-mode)
 

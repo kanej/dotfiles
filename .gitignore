@@ -1,9 +1,14 @@
 .DS_Store
 visualstudio/CurrentSettings.vssettings
 vim/bundle/nerdtree
+vim/.netrwhist
 emacs/projectile*
 emacs/backups/
 emacs/elpa/
 emacs/auto-save-list
 emacs/ido.last
 emacs/places
+emacs/bookmarks
+emacs/eshell
+emacs/recentf
+emacs/tramp

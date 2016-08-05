@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/kanej/projects/sandbox/dpxtd-vm'
 let g:netrw_dirhist_2='/Users/kanej/projects/lein-s3-sync'
 let g:netrw_dirhist_3='/Users/kanej/projects/sandbox/digitalocean'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/kanej/projects/lein-s3-sync'
 let g:netrw_dirhist_6='/Users/kanej/projects/folk'
 let g:netrw_dirhist_7='/Users/kanej/Documents/laura'
 let g:netrw_dirhist_8='/Users/kanej/projects/sandbox/keycloak-spike'
+let g:netrw_dirhist_9='/Users/kanej/.oh-my-zsh'
