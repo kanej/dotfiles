@@ -116,12 +116,11 @@
   :diminish projectile-mode
   ;;:commands (projectile-mode projectile-switch-project)
   :bind ("C-c p p" . projectile-switch-project)
+  :init
+  (projectile-global-mode t)
   :config
-  ;;(setq projectile-enable-caching t)
-  ;;(setq projectile-switch-project-action 'projectile-dired)
-  (projectile-global-mode t))
-
-(projectile-global-mode t)
+  (setq projectile-enable-caching t)
+  (setq projectile-switch-project-action 'projectile-dired))
 
 (use-package magit
   :ensure t
@@ -133,9 +132,11 @@
 (use-package flycheck
   :ensure t
   :defer 10
+  :init
+  (global-flycheck-mode)
   :config
-  (setq flycheck-html-tidy-executable "tidy5")
-  (global-flycheck-mode))
+  (setq flycheck-html-tidy-executable "tidy")
+  (flycheck-add-mode 'html-tidy 'web-mode))
 
 (use-package yasnippet
   :ensure t
@@ -143,6 +144,7 @@
   (yas-global-mode))
 
 (use-package expand-region
+  :disabled t
   :ensure t
   :bind ("C-@" . er/expand-region))
 
