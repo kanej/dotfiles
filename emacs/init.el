@@ -30,7 +30,7 @@
   (require 'use-package))
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)
-;; (setq use-package-verbose t)
+(setq use-package-verbose t)
 ;;(server-start)
 
 (setq user-full-name "John Kane"
@@ -86,30 +86,32 @@
 
 (use-package company
   :ensure t
+  :diminish company-mode
   :config (global-company-mode))
 
-;;(use-package helm
-;;  :ensure t
-;;  :diminish helm-mode
-;;  :init (progn
-;;          (require 'helm-config)
-;;          (use-package helm-projectile
-;;            :ensure t
-;;            :commands helm-projectile
-;;            :bind ("C-c p h" . helm-projectile))
-;;          ;;(use-package helm-ag :defer 10  :ensure t)
-;;          (setq ;;helm-locate-command "mdfind -interpret -name %s %s"
-;;                helm-ff-newfile-prompt-p nil
-;;                helm-M-x-fuzzy-match t)
-;;          (helm-mode)
-;;          (use-package helm-swoop
-;;            :ensure t
-;;            :bind ("H-w" . helm-swoop)))
-;;  :bind (("C-c h" . helm-command-prefix)
-;;         ("C-x b" . helm-mini)
-;;         ("C-`" . helm-resume)
-;;         ("M-x" . helm-M-x)
-;;         ("C-x C-f" . helm-find-files)))
+(use-package helm
+  :ensure t
+  :diminish helm-mode
+  :init (progn
+          (require 'helm-config)
+          (use-package helm-ls-git :ensure t)
+          (use-package helm-projectile
+            :ensure t
+            :commands helm-projectile
+            :bind ("C-c p h" . helm-projectile))
+          ;;(use-package helm-ag :defer 10  :ensure t)
+          (setq ;;helm-locate-command "mdfind -interpret -name %s %s"
+                helm-ff-newfile-prompt-p nil
+                helm-M-x-fuzzy-match t)
+          (helm-mode)
+          (use-package helm-swoop
+            :ensure t
+            :bind ("H-w" . helm-swoop)))
+  :bind (("C-c h" . helm-command-prefix)
+         ("C-x b" . helm-mini)
+         ("C-`" . helm-resume)
+         ("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files)))
 
 (use-package projectile
   :ensure t
@@ -132,6 +134,7 @@
 (use-package flycheck
   :ensure t
   :defer 10
+  :diminish flycheck-mode
   :init
   (global-flycheck-mode)
   :config
@@ -140,6 +143,7 @@
 
 (use-package yasnippet
   :ensure t
+  :diminish yas-minor-mode
   :config
   (yas-global-mode))
 
