@@ -217,6 +217,11 @@
   :defer t
   :ensure t)
 
+;; Elm
+(use-package elm-mode
+  :defer t
+  :ensure t)
+
 ;; Markdown
 (use-package markdown-mode
   :defer t

@@ -5,6 +5,7 @@ vim/.netrwhist
 emacs/projectile*
 emacs/backups/
 emacs/elpa/
+emacs/emacs_backtrace.txt
 emacs/auto-save-list
 emacs/ido.last
 emacs/places
