@@ -57,6 +57,14 @@ function ej() {
   vim ~\.jumpfile
 }
 
+function eh() {
+  vim ~\.hyper.js
+}
+
+function make-link ($target, $link) {
+    New-Item -Path $link -ItemType SymbolicLink -Value $target
+}
+
 function open([string] $path) {
   if($path) {
     explorer $path

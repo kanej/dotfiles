@@ -13,3 +13,4 @@ emacs/bookmarks
 emacs/eshell
 emacs/recentf
 emacs/tramp
+configstore/
