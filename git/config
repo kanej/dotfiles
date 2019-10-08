@@ -1,6 +1,7 @@
 [user]
 	name = John Kane
 	email = john@kanej.me
+	signingkey = 0x1B559DDD3CB026C3
 [alias]
   s = status
   co = checkout
