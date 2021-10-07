@@ -1,0 +1,16 @@
+[username]
+show_always = true
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[character]                            
+success_symbol = "[λ](bold green)"
+error_symbol = "[λ](bold red)"
