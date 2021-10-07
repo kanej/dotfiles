@@ -9,11 +9,13 @@
   br = branch
   a = add
   l = log
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
   poom = push origin master
   boom = push origin master
   piom = pull origin master
 [core]
 	editor = vim
+	excludesfile = /Users/kanej/.gitignore
 [color]
 	ui = auto
 [merge]
@@ -36,3 +38,5 @@
 	path = c:/Program Files/KDiff3/kdiff3.exe
 [mergetool "DiffMerge"]
 	cmd = sgdm --nosplash --merge --title1=\"Mine\" --title2=\"Base\" --title3=\"Theirs\" --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[push]
+	default = simple
