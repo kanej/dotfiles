@@ -14,3 +14,12 @@ emacs/eshell
 emacs/recentf
 emacs/tramp
 configstore/
+asciinema/
+dfx/
+firebase/
+gatsby/
+gh/
+mailscript/
+truffle/
+verdaccio/
+yarn/
